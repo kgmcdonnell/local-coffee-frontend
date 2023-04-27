@@ -9,7 +9,7 @@ export function LogoutLink() {
   };
 
   return (
-    <a href="#" onClick={handleClick}>
+    <a className="nav-link" onClick={handleClick}>
       Logout
     </a>
   );
