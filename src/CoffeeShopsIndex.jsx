@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
-
 export function CoffeeShopsIndex(props) {
   console.log(props);
   return (
@@ -15,7 +12,6 @@ export function CoffeeShopsIndex(props) {
                   <h3 className="card-title">{shop.name}</h3>
                   <p className="card-text">Address: {shop.formatted_address}</p>
                   <p className="card-text">Rating: {shop.rating}</p>
-                  <FontAwesomeIcon icon={faStar} />
                 </div>
               </div>
             </div>
