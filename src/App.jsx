@@ -10,9 +10,18 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Header />
+        {localStorage.jwt === undefined ? (
+          <Content />
+        ) : (
+          <>
+            <Header />
+            <Content />
+            <Footer />
+          </>
+        )}
+        {/* <Header />
         <Content />
-        <Footer />
+        <Footer /> */}
       </BrowserRouter>
     </div>
   );
