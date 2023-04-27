@@ -7,7 +7,6 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand">Roast'd</a>
-          <FaCoffee />
           <button
             className="navbar-toggler"
             type="button"
