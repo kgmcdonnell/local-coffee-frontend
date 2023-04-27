@@ -1,5 +1,8 @@
+// Libraries
 import axios from "axios";
 import { useState } from "react";
+// CSS
+import "./Signup.scoped.scss";
 
 export function Signup() {
   const [errors, setErrors] = useState([]);

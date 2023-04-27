@@ -1,0 +1,39 @@
+.user-login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./assets/background-option3.jpg");
+  background-size: cover;
+  background-position: center center;
+  color: white;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: inset -5px -5px rgba(0, 0, 0, 0.4);
+  // background-color: transparent;
+  border-radius: 25px;
+}
+
+input {
+  padding: 12px;
+  margin: 20px;
+  width: 65%;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: inset -3px -3px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+
+

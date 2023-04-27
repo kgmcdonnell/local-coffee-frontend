@@ -1,5 +1,8 @@
+// Libraries
 import axios from "axios";
 import { useState } from "react";
+// CSS
+import "./Login.scoped.scss";
 
 const jwt = localStorage.getItem("jwt");
 if (jwt) {
@@ -30,20 +33,20 @@ export function Login(props) {
 
   return (
     <div className="user-login">
-      <div className="container">
+      <div className="login-box">
         <form onSubmit={handleSubmit} className="form text-center">
           <h1>Roast'd</h1>
           <p>Connect with local coffee shops around you!</p>
-          <ul>
-            {errors.map(error => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
+
+          {errors.map(error => (
+            <p key={error}>{error}</p>
+          ))}
+
           <input type="email" name="email" className="box" placeholder="Email" required />
           <input type="password" name="password" className="box" placeholder="Password" required />
-          <input type="submit" value="Login" id="btn" />
+          <input className="btn" type="submit" value="Login" id="btn" />
         </form>
-        <input onClick={() => props.onSignup(true)} type="submit" value="Sign Up" id="btn" />
+        <input className="btn" onClick={() => props.onSignup(true)} type="submit" value="Sign Up" id="btn" />
       </div>
     </div>
   );

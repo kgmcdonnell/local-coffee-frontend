@@ -27,7 +27,7 @@ export function Content() {
   useEffect(handleIndexCoffeeShops, []);
 
   return (
-    <div className="container">
+    <div>
       <Routes>
         <Route path="/login" element={<Login onSignup={setIsSignupVisible} />} />
         <Route path="/coffee-shops" element={<CoffeeShopsIndex coffeeShops={coffeeShops} />} />
