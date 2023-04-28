@@ -4,7 +4,7 @@ import { LogoutLink } from "./LogoutLink";
 export function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary py-3" style={{ backgroundColor: "black" }}>
         <div className="container-fluid">
           <a className="navbar-brand">Roast'd</a>
           <button
@@ -21,7 +21,7 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page">
+                <Link className="nav-link active" aria-current="page" to="/coffee-shops">
                   Home
                 </Link>
               </li>

@@ -29,7 +29,6 @@ export function Content() {
   return (
     <div>
       <Routes>
-        <Route path="/login" element={<Login onSignup={setIsSignupVisible} />} />
         <Route path="/" element={<Login onSignup={setIsSignupVisible} />} />
         <Route path="/coffee-shops" element={<CoffeeShopsIndex coffeeShops={coffeeShops} />} />
       </Routes>

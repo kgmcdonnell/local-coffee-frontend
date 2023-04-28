@@ -19,9 +19,6 @@ function App() {
             <Footer />
           </>
         )}
-        {/* <Header />
-        <Content />
-        <Footer /> */}
       </BrowserRouter>
     </div>
   );
