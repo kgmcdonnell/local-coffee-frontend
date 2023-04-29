@@ -4,9 +4,11 @@ import { LogoutLink } from "./LogoutLink";
 export function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary py-3" style={{ backgroundColor: "black" }}>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark py-3">
         <div className="container-fluid">
-          <a className="navbar-brand">Roast'd</a>
+          <a className="navbar-brand" style={{ color: "white" }}>
+            Roast'd
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -21,13 +23,19 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/coffee-shops">
+                <Link className="nav-link active" aria-current="page" to="/coffee-shops" style={{ color: "white" }}>
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <LogoutLink className="nav-link" />
-              </li>
+              {localStorage.jwt === undefined ? (
+                <></>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <LogoutLink className="nav-link" />
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

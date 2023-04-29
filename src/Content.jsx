@@ -29,7 +29,15 @@ export function Content() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Login onSignup={setIsSignupVisible} />} />
+        {localStorage.jwt === undefined ? (
+          <>
+            <Route path="/" element={<Login onSignup={setIsSignupVisible} />} />
+          </>
+        ) : (
+          <>
+            <Route path="/" element={<CoffeeShopsIndex coffeeShops={coffeeShops} />} />
+          </>
+        )}
         <Route path="/coffee-shops" element={<CoffeeShopsIndex coffeeShops={coffeeShops} />} />
       </Routes>
 

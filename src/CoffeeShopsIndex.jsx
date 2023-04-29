@@ -28,7 +28,7 @@ export function CoffeeShopsIndex(props) {
                 </div>
               ))
             ) : (
-              <p>No local coffee shops</p>
+              <></>
             )}
           </div>
         </div>
