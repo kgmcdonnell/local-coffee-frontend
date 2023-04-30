@@ -13,7 +13,7 @@ export function CoffeeShopsIndex(props) {
               className="form-control"
               value={search}
               onChange={event => setSearch(event.target.value)}
-              placeholder="search"
+              placeholder="Find a coffee shop"
             ></input>
           </div>
 

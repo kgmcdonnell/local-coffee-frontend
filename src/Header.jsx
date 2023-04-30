@@ -25,7 +25,7 @@ export function Header() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/coffee-shops" style={{ color: "white" }}>
-                  Home
+                  Coffee Shops
                 </Link>
               </li>
               {localStorage.jwt === undefined ? (
