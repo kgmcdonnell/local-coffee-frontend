@@ -10,6 +10,7 @@ export function Header() {
             Roast'd
           </a>
           <button
+            style={{ background: "white" }}
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -31,9 +32,7 @@ export function Header() {
                 <></>
               ) : (
                 <>
-                  <li className="nav-item">
-                    <LogoutLink className="nav-link" />
-                  </li>
+                  <LogoutLink className="nav-link nav-item" />
                 </>
               )}
             </ul>
