@@ -13,10 +13,13 @@ export function CoffeeShopsIndex(props) {
               className="form-control"
               value={search}
               onChange={event => setSearch(event.target.value)}
-              placeholder="Find a coffee shop"
+              placeholder="Search"
             ></input>
           </div>
-
+          <div className="location-search input-group">
+            <input className="form-control input" type="text" placeholder="City" />
+            <input className="form-control input" type="text" placeholder="State" />
+          </div>
           <div>
             {props?.coffeeShops && props.coffeeShops.length > 0 ? (
               props.coffeeShops
