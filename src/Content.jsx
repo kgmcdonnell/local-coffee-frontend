@@ -24,6 +24,15 @@ export function Content() {
     setIsSignupVisible(false);
   };
 
+  // Update User Location
+  const handleUpdateLocation = params => {
+    console.log("this is my submit!");
+    console.log(localStorage.getItem("user_id"));
+    axios.patch(`http://localhost:3000/users/${localStorage.getItem("user_id")}.json`, params).then(response => {
+      handleIndexCoffeeShops();
+    });
+  };
+
   useEffect(handleIndexCoffeeShops, []);
 
   return (
@@ -38,7 +47,10 @@ export function Content() {
             <Route path="/" element={<CoffeeShopsIndex coffeeShops={coffeeShops} />} />
           </>
         )}
-        <Route path="/coffee-shops" element={<CoffeeShopsIndex coffeeShops={coffeeShops} />} />
+        <Route
+          path="/coffee-shops"
+          element={<CoffeeShopsIndex coffeeShops={coffeeShops} onUpdateLocation={handleUpdateLocation} />}
+        />
       </Routes>
 
       <Modal show={isSignupVisible} onClose={handleClose}>

@@ -1,19 +1,27 @@
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./CoffeeShopsIndex.scoped.scss";
 
 export function CoffeeShopsIndex(props) {
+  const handleSubmit = event => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    props.onUpdateLocation(params);
+    event.target.reset();
+  };
+
   return (
     <div className="coffee-shops-index">
       <div className="row">
         <div className="col-sm-5">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-sm-5" style={{ padding: "5px" }}>
-                <input className="form-control form-input" type="text" placeholder="City" />
+                <input className="form-control form-input" type="text" name="city" placeholder="City" />
               </div>
               <div className="col-sm-5" style={{ padding: "5px" }}>
-                <input className="form-control form-input" type="text" placeholder="State" />
+                <input className="form-control form-input" type="text" name="state" placeholder="State" />
               </div>
               <button
                 type="submit"
