@@ -34,6 +34,9 @@ export function CoffeeShopsIndex(props) {
                         <p>
                           <small>Rating: {shop.rating}</small>
                         </p>
+                        <button type="button" className="btn btn-dark" style={{ marginTop: "10px" }}>
+                          More Info
+                        </button>
                       </div>
                     </div>
                   </div>

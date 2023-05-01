@@ -4,7 +4,7 @@ import { LogoutLink } from "./LogoutLink";
 export function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark py-3">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark py-4">
         <div className="container-fluid">
           <a className="navbar-brand" style={{ color: "white" }}>
             Roast'd
