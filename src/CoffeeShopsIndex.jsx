@@ -7,16 +7,7 @@ export function CoffeeShopsIndex(props) {
     <div className="coffee-shops-index">
       <div className="row">
         <div className="col-sm-5">
-          <div className="input-group mb-3 search">
-            <input
-              type="text"
-              className="form-control"
-              value={search}
-              onChange={event => setSearch(event.target.value)}
-              placeholder="Search"
-            ></input>
-          </div>
-          <div className="location-search input-group">
+          <div className="search input-group">
             <input className="form-control input" type="text" placeholder="City" />
             <input className="form-control input" type="text" placeholder="State" />
           </div>
