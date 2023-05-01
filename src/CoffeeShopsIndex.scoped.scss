@@ -1,21 +1,4 @@
-.coffee-shops-index {
-  background-position: center center;
-}
-
-p {
-  margin: 0
-}
-
-.child-row {
-  padding-left: 40px;
-  padding-bottom: 30px;
-  padding-top: 10px;
-}
-
-.child-row:hover {
-  background-color: rgb(243,237,233);
-}
-
+// Search Form Styling
 form {
   padding-left: 28px;
   margin-bottom: 20px;
@@ -31,10 +14,24 @@ form {
   max-height: 48px;
 }
 
-.btn {
-  font-size: 0.8rem !important;
-}
-
 .fa-magnifying-glass:hover {
   color:  gray;
+}
+
+// Coffee Shops Styling
+p {
+  margin: 0
+}
+.child-row {
+  padding-left: 40px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.child-row:hover {
+  background-color: rgb(243,237,233);
+}
+
+.btn {
+  font-size: 0.8rem !important;
 }

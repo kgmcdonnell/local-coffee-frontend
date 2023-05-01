@@ -7,3 +7,8 @@ html {
   height: 100%;
 }
 
+/* Header Links Hover Effect */
+.header-nav:hover {
+  color: gray !important;
+}
+

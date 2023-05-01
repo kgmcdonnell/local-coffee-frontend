@@ -9,7 +9,7 @@ export function LogoutLink() {
   };
 
   return (
-    <a className="nav-link" style={{ color: "white", cursor: "pointer" }} onClick={handleClick}>
+    <a className="nav-link header-nav" style={{ color: "white", cursor: "pointer" }} onClick={handleClick}>
       Logout
     </a>
   );

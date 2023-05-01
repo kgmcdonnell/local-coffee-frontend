@@ -24,7 +24,7 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/coffee-shops" style={{ color: "white" }}>
+                <Link className="nav-link header-nav" to="/coffee-shops" style={{ color: "white" }}>
                   Find a coffee shop
                 </Link>
               </li>
