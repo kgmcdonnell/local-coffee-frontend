@@ -7,13 +7,23 @@ export function CoffeeShopsIndex(props) {
     <div className="coffee-shops-index">
       <div className="row">
         <div className="col-sm-5">
-          <div className="search input-group">
-            <input className="form-control input" type="text" placeholder="City" />
-            <input className="form-control input" type="text" placeholder="State" />
-            <button type="submit" style={{ backgroundColor: "transparent", border: "none" }}>
-              <FontAwesomeIcon className="fa-magnifying-glass" icon={faMagnifyingGlass} style={{ margin: "10px" }} />
-            </button>
-          </div>
+          <form>
+            <div className="row">
+              <div className="col-sm-5" style={{ padding: "5px" }}>
+                <input className="form-control form-input" type="text" placeholder="City" />
+              </div>
+              <div className="col-sm-5" style={{ padding: "5px" }}>
+                <input className="form-control form-input" type="text" placeholder="State" />
+              </div>
+              <button
+                type="submit"
+                className="col-sm-2 btn-lg search-button"
+                style={{ backgroundColor: "transparent", border: "none", padding: "0", margin: "5px" }}
+              >
+                <FontAwesomeIcon className="fa-magnifying-glass" icon={faMagnifyingGlass} />
+              </button>
+            </div>
+          </form>
           <div>
             {props?.coffeeShops && props.coffeeShops.length > 0 ? (
               props.coffeeShops.map(shop => (
@@ -41,9 +51,7 @@ export function CoffeeShopsIndex(props) {
             )}
           </div>
         </div>
-        <div className="col-sm-7">
-          <p>hello!</p>
-        </div>
+        <div className="col-sm-7">{/* this is where the map goes */}</div>
       </div>
     </div>
   );

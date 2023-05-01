@@ -16,14 +16,19 @@ p {
   background-color: rgb(243,237,233);
 }
 
-.search {
+form {
   padding-left: 28px;
   margin-bottom: 20px;
   margin-top: 30px;
 }
 
-.input {
-  max-width: 200px;
+.form-input {
+  max-width: 400px;
+}
+
+.search-button {
+  max-width: 20px;
+  max-height: 48px;
 }
 
 .btn {
