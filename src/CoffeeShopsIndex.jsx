@@ -5,12 +5,11 @@ import { GoogleMap, InfoWindow, LoadScript, Marker } from "@react-google-maps/ap
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+
 // Scoped CSS
 import "./CoffeeShopsIndex.scoped.scss";
 
 export function CoffeeShopsIndex(props) {
-  console.log(props);
-
   const handleSubmit = event => {
     event.preventDefault();
     const params = new FormData(event.target);
@@ -147,7 +146,7 @@ export function CoffeeShopsIndex(props) {
                 {props?.coffeeShops && props.coffeeShops.length > 0 ? (
                   props.coffeeShops.map(shop => (
                     <div key={shop.place_id}>
-                      return <Marker position={shop.geometry.location} />
+                      return <Marker position={shop.geometry.location}></Marker>
                     </div>
                   ))
                 ) : (
