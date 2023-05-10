@@ -27,7 +27,7 @@ export function CoffeeShopsIndex(props) {
   return (
     <div className="coffee-shops-index">
       <div className="row">
-        <div className="col-sm-5">
+        <div className="col-sm-5 left-column">
           <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-sm-5" style={{ padding: "5px" }}>
@@ -96,7 +96,7 @@ export function CoffeeShopsIndex(props) {
               </button>
             </div>
           </form>
-          <div>
+          <div className="left">
             {props?.coffeeShops && props.coffeeShops.length > 0 ? (
               props.coffeeShops.map(shop => (
                 <div key={shop.place_id}>
@@ -105,7 +105,12 @@ export function CoffeeShopsIndex(props) {
                       <p>
                         <strong>{shop.name}</strong>
                         <button
-                          style={{ float: "right", border: "none", backgroundColor: "transparent" }}
+                          style={{
+                            marginRight: "20px",
+                            float: "right",
+                            border: "none",
+                            backgroundColor: "transparent",
+                          }}
                           onClick={() => props.onShowCoffeeShop(shop.place_id)}
                         >
                           <FontAwesomeIcon

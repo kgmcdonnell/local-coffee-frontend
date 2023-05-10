@@ -35,3 +35,10 @@ p {
 .btn {
   font-size: 0.8rem !important;
 }
+
+// Left Column Scroll
+.left{
+  height: 100vh;
+  width: 105%;
+  overflow: scroll;
+}
