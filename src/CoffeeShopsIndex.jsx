@@ -1,14 +1,27 @@
 import { useState } from "react";
+import { GoogleMap, InfoWindow, LoadScript, Marker } from "@react-google-maps/api";
+
+// Icon Libraries
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+// Scoped CSS
 import "./CoffeeShopsIndex.scoped.scss";
 
 export function CoffeeShopsIndex(props) {
+  console.log(props);
+
   const handleSubmit = event => {
     event.preventDefault();
     const params = new FormData(event.target);
     props.onUpdateLocation(params);
     event.target.reset();
+  };
+
+  // setting google maps height and width
+  const mapStyles = {
+    height: "100%",
+    width: "100%",
   };
 
   return (
@@ -76,7 +89,7 @@ export function CoffeeShopsIndex(props) {
               </div>
               <button
                 type="submit"
-                className="col-sm-2 btn-lg search-button"
+                className="col-sm-2 btn-lg search-button submit"
                 style={{ backgroundColor: "transparent", border: "none", padding: "0", margin: "5px" }}
               >
                 <FontAwesomeIcon className="fa-magnifying-glass" icon={faMagnifyingGlass} />
@@ -91,6 +104,16 @@ export function CoffeeShopsIndex(props) {
                     <div className="child-row">
                       <p>
                         <strong>{shop.name}</strong>
+                        <button
+                          style={{ float: "right", border: "none", backgroundColor: "transparent" }}
+                          onClick={() => props.onShowCoffeeShop(shop.place_id)}
+                        >
+                          <FontAwesomeIcon
+                            className="fa-circle-info"
+                            icon={faCircleInfo}
+                            style={{ color: "rgba(83,81,81)" }}
+                          />
+                        </button>
                       </p>
                       <p>
                         <small>Address: {shop.formatted_address}</small>
@@ -98,9 +121,6 @@ export function CoffeeShopsIndex(props) {
                       <p>
                         <small>Rating: {shop.rating}</small>
                       </p>
-                      <button type="button" className="btn btn-dark" style={{ marginTop: "10px" }}>
-                        More Info
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -110,7 +130,30 @@ export function CoffeeShopsIndex(props) {
             )}
           </div>
         </div>
-        <div className="col-sm-7">{/* this is where the map goes */}</div>
+        <div className="col-sm-7">
+          {props.userData && props.userData.latitude > 0 ? (
+            <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
+              <GoogleMap
+                mapContainerStyle={mapStyles}
+                center={{ lat: parseFloat(props.userData.latitude), lng: parseFloat(props.userData.longitude) }}
+                zoom={13}
+              >
+                {/* Add Markers */}
+                {props?.coffeeShops && props.coffeeShops.length > 0 ? (
+                  props.coffeeShops.map(shop => (
+                    <div key={shop.place_id}>
+                      return <Marker position={shop.geometry.location} />
+                    </div>
+                  ))
+                ) : (
+                  <></>
+                )}
+              </GoogleMap>
+            </LoadScript>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </div>
   );
