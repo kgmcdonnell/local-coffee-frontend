@@ -1,8 +1,9 @@
 .signup {
-  background-image: url("./assets/shutterstock_177063779.jpg");
+  // background-image: url("./assets/shutterstock_177063779.jpg");
+  background-color: rgb(243,237,233);
   background-size: cover;
-  color: white;
   padding: 20px;
+  border-radius: 25px;
 }
 
 .form-group {
@@ -21,12 +22,12 @@
   margin: 10px;
   border: none;
   outline: none;
-  background-color: white;
   border-radius: 5px;
+  background-color: rgb(243,237,233);
 }
 
 .signup-submit:hover {
   cursor: pointer;
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(140, 138, 138);
   color: white;
 }
