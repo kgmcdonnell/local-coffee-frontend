@@ -18,14 +18,14 @@ export function Content() {
 
   // Coffee Shops Index
   const handleIndexCoffeeShops = () => {
-    axios.get("http://localhost:3000/coffee_shops.json").then(function(response) {
+    axios.get("/coffee_shops.json").then(function(response) {
       setCoffeeShops(response.data);
     });
   };
 
   const handleCoffeeShopShow = id => {
     setIsCoffeeShopVisible(true);
-    axios.get(`http://localhost:3000/coffee_shops/${id}`).then(function(response) {
+    axios.get(`/coffee_shops/${id}`).then(function(response) {
       setCurrentCoffeeShop(response.data.result);
     });
   };
@@ -38,7 +38,7 @@ export function Content() {
 
   // Update User Location
   const handleUpdateLocation = params => {
-    axios.patch(`http://localhost:3000/users/${localStorage.getItem("user_id")}.json`, params).then(response => {
+    axios.patch(`/users/${localStorage.getItem("user_id")}.json`, params).then(response => {
       handleIndexCoffeeShops();
       setCurrentUserShow(response.data);
     });
@@ -46,7 +46,7 @@ export function Content() {
 
   // User Show
   const handleUserShow = params => {
-    axios.get(`http://localhost:3000/users/${localStorage.getItem("user_id")}.json`).then(response => {
+    axios.get(`/users/${localStorage.getItem("user_id")}.json`).then(response => {
       setCurrentUserShow(response.data);
     });
   };
