@@ -123,7 +123,7 @@ export function CoffeeShopsIndex(props) {
                         <small>Address: {shop.formatted_address}</small>
                       </p>
                       <p>
-                        <small>Rating: {shop.rating}</small>
+                        <small>Rating: {shop.rating} / 5</small>
                       </p>
                     </div>
                   </div>
