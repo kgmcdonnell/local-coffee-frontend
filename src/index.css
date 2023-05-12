@@ -3,7 +3,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
+  overflow: hidden;
   height: 100%;
 }
 

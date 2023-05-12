@@ -95,7 +95,6 @@ export function CoffeeShopsIndex(props) {
               >
                 <FontAwesomeIcon className="fa-magnifying-glass" icon={faMagnifyingGlass} />
               </button>
-              <div class="clearfix"></div>
             </div>
           </form>
           <div className="left">
