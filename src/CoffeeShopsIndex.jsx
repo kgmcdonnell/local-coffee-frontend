@@ -134,6 +134,7 @@ export function CoffeeShopsIndex(props) {
                       </p>
                     </div>
                   </div>
+                  <div className="child-row"></div>
                 </div>
               ))
             ) : (
