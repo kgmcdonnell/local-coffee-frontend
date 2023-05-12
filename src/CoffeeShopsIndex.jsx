@@ -90,7 +90,7 @@ export function CoffeeShopsIndex(props) {
               </div>
               <button
                 type="submit"
-                className="col-sm-2 btn-lg search-button submit"
+                className="col-sm-1 btn-lg search-button submit"
                 style={{ backgroundColor: "transparent", border: "none", padding: "0" }}
               >
                 <FontAwesomeIcon className="fa-magnifying-glass" icon={faMagnifyingGlass} />
