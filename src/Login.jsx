@@ -11,10 +11,10 @@ if (jwt) {
 
 export function Login(props) {
   const [errors, setErrors] = useState([]);
+
   const handleSubmit = event => {
     event.preventDefault();
     setErrors([]);
-    console.log("handleSubmit");
     const params = new FormData(event.target);
     axios
       .post("/sessions.json", params)

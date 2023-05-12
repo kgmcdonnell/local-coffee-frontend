@@ -10,6 +10,8 @@ import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import "./CoffeeShopsIndex.scoped.scss";
 
 export function CoffeeShopsIndex(props) {
+  console.log(props);
+  const [coffeeShopInfoWindow, setCoffeeShopInfoWindow] = useState(null);
   const handleSubmit = event => {
     event.preventDefault();
     const params = new FormData(event.target);
@@ -100,7 +102,12 @@ export function CoffeeShopsIndex(props) {
               props.coffeeShops.map(shop => (
                 <div key={shop.place_id}>
                   <div className="row">
-                    <div className="child-row">
+                    <div
+                      className="child-row"
+                      onClick={() => {
+                        setCoffeeShopInfoWindow(shop);
+                      }}
+                    >
                       <p>
                         <strong>{shop.name}</strong>
                         <button
@@ -123,7 +130,7 @@ export function CoffeeShopsIndex(props) {
                         <small>Address: {shop.formatted_address}</small>
                       </p>
                       <p>
-                        <small>Rating: {shop.rating} / 5</small>
+                        <small>Rating: {shop.rating}</small>
                       </p>
                     </div>
                   </div>
@@ -146,11 +153,32 @@ export function CoffeeShopsIndex(props) {
                 {props?.coffeeShops && props.coffeeShops.length > 0 ? (
                   props.coffeeShops.map(shop => (
                     <div key={shop.place_id}>
-                      return <Marker position={shop.geometry.location}></Marker>
+                      <Marker
+                        position={shop.geometry.location}
+                        onClick={() => {
+                          setCoffeeShopInfoWindow(shop);
+                        }}
+                      ></Marker>
                     </div>
                   ))
                 ) : (
                   <></>
+                )}
+                {coffeeShopInfoWindow && (
+                  <InfoWindow
+                    position={coffeeShopInfoWindow.geometry.location}
+                    onCloseClick={() => {
+                      setCoffeeShopInfoWindow(null);
+                    }}
+                  >
+                    <div>
+                      <p>
+                        <strong>{coffeeShopInfoWindow.name}</strong>
+                      </p>
+                      <p>{coffeeShopInfoWindow.formatted_address}</p>
+                      <p>Status: {coffeeShopInfoWindow.business_status}</p>
+                    </div>
+                  </InfoWindow>
                 )}
               </GoogleMap>
             </LoadScript>
