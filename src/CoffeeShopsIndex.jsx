@@ -28,7 +28,7 @@ export function CoffeeShopsIndex(props) {
   return (
     <div className="coffee-shops-index">
       <div className="row">
-        <div className="col-sm-5 left-column">
+        <div className="col-sm-5">
           <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-sm-5" style={{ padding: "5px" }}>
@@ -134,12 +134,14 @@ export function CoffeeShopsIndex(props) {
                       </p>
                     </div>
                   </div>
-                  <div className="child-row"></div>
                 </div>
               ))
             ) : (
               <></>
             )}
+            <div className="row">
+              <div className="child-row"></div>
+            </div>
           </div>
         </div>
         <div className="col-sm-7">

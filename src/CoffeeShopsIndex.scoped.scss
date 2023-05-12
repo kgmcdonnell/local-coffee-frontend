@@ -33,7 +33,7 @@ p {
 
 // Left Column Scroll
 .left{
-  height: 100vh;
+  height: calc(100vh - 75px - 50px);
   width: 105%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
