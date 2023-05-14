@@ -3,6 +3,7 @@ import "./Account.scoped.scss";
 
 export function Account(props) {
   const handleSubmit = event => {
+    console.log("this is my submit");
     event.preventDefault();
     const params = new FormData(event.target);
     props.onUpdateUser(params, props.userData.id);

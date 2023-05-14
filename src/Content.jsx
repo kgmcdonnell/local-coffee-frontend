@@ -55,6 +55,7 @@ export function Content() {
   // User Update
   const handleUpdateUser = (params, id) => {
     axios.patch(`/users/${id}.json`, params).then(response => {
+      handleIndexCoffeeShops();
       setCurrentUserShow(response.data);
     });
   };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GoogleMap, InfoWindow, Marker } from "@react-google-maps/api";
+import { GoogleMap, InfoWindowF, MarkerF } from "@react-google-maps/api";
 
 // Icon Libraries
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -145,7 +145,6 @@ export function CoffeeShopsIndex(props) {
         </div>
         <div className="col-sm-7">
           {props.userData && props.userData.latitude > 0 ? (
-            // <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
             <GoogleMap
               mapContainerStyle={mapStyles}
               center={{ lat: parseFloat(props.userData.latitude), lng: parseFloat(props.userData.longitude) }}
@@ -155,19 +154,19 @@ export function CoffeeShopsIndex(props) {
               {props?.coffeeShops && props.coffeeShops.length > 0 ? (
                 props.coffeeShops.map(shop => (
                   <div key={shop.place_id}>
-                    <Marker
+                    <MarkerF
                       position={shop.geometry.location}
                       onClick={() => {
                         setCoffeeShopInfoWindow(shop);
                       }}
-                    ></Marker>
+                    ></MarkerF>
                   </div>
                 ))
               ) : (
                 <></>
               )}
               {coffeeShopInfoWindow && (
-                <InfoWindow
+                <InfoWindowF
                   position={coffeeShopInfoWindow.geometry.location}
                   onCloseClick={() => {
                     setCoffeeShopInfoWindow(null);
@@ -180,11 +179,10 @@ export function CoffeeShopsIndex(props) {
                     <p>{coffeeShopInfoWindow.formatted_address}</p>
                     <p>Status: {coffeeShopInfoWindow.business_status}</p>
                   </div>
-                </InfoWindow>
+                </InfoWindowF>
               )}
             </GoogleMap>
           ) : (
-            // </LoadScript>
             <></>
           )}
         </div>
