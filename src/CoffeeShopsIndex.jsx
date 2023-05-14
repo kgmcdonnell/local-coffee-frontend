@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GoogleMap, InfoWindow, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, InfoWindow, Marker } from "@react-google-maps/api";
 
 // Icon Libraries
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -145,46 +145,46 @@ export function CoffeeShopsIndex(props) {
         </div>
         <div className="col-sm-7">
           {props.userData && props.userData.latitude > 0 ? (
-            <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
-              <GoogleMap
-                mapContainerStyle={mapStyles}
-                center={{ lat: parseFloat(props.userData.latitude), lng: parseFloat(props.userData.longitude) }}
-                zoom={13}
-              >
-                {/* Add Markers */}
-                {props?.coffeeShops && props.coffeeShops.length > 0 ? (
-                  props.coffeeShops.map(shop => (
-                    <div key={shop.place_id}>
-                      <Marker
-                        position={shop.geometry.location}
-                        onClick={() => {
-                          setCoffeeShopInfoWindow(shop);
-                        }}
-                      ></Marker>
-                    </div>
-                  ))
-                ) : (
-                  <></>
-                )}
-                {coffeeShopInfoWindow && (
-                  <InfoWindow
-                    position={coffeeShopInfoWindow.geometry.location}
-                    onCloseClick={() => {
-                      setCoffeeShopInfoWindow(null);
-                    }}
-                  >
-                    <div>
-                      <p>
-                        <strong>{coffeeShopInfoWindow.name}</strong>
-                      </p>
-                      <p>{coffeeShopInfoWindow.formatted_address}</p>
-                      <p>Status: {coffeeShopInfoWindow.business_status}</p>
-                    </div>
-                  </InfoWindow>
-                )}
-              </GoogleMap>
-            </LoadScript>
+            // <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_API_KEY}>
+            <GoogleMap
+              mapContainerStyle={mapStyles}
+              center={{ lat: parseFloat(props.userData.latitude), lng: parseFloat(props.userData.longitude) }}
+              zoom={13}
+            >
+              {/* Add Markers */}
+              {props?.coffeeShops && props.coffeeShops.length > 0 ? (
+                props.coffeeShops.map(shop => (
+                  <div key={shop.place_id}>
+                    <Marker
+                      position={shop.geometry.location}
+                      onClick={() => {
+                        setCoffeeShopInfoWindow(shop);
+                      }}
+                    ></Marker>
+                  </div>
+                ))
+              ) : (
+                <></>
+              )}
+              {coffeeShopInfoWindow && (
+                <InfoWindow
+                  position={coffeeShopInfoWindow.geometry.location}
+                  onCloseClick={() => {
+                    setCoffeeShopInfoWindow(null);
+                  }}
+                >
+                  <div>
+                    <p>
+                      <strong>{coffeeShopInfoWindow.name}</strong>
+                    </p>
+                    <p>{coffeeShopInfoWindow.formatted_address}</p>
+                    <p>Status: {coffeeShopInfoWindow.business_status}</p>
+                  </div>
+                </InfoWindow>
+              )}
+            </GoogleMap>
           ) : (
+            // </LoadScript>
             <></>
           )}
         </div>

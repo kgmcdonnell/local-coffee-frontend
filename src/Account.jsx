@@ -118,22 +118,6 @@ export function Account(props) {
             </datalist>
           </div>
         </div>
-        <div className="form-group row" style={{ marginBottom: "20px" }}>
-          <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
-            Password
-          </label>
-          <div className="col-sm-9">
-            <input
-              type="password"
-              className="form-control form-control-sm"
-              id="colFormLabelSm"
-              defaultValue={props.userData.password}
-              name="password"
-              placeholder="New Password"
-            />
-          </div>
-        </div>
-
         <div className="form-group text-center">
           <button className="btn btn-secondary btn-sm" type="submit">
             Save

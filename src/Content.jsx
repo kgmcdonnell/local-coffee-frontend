@@ -59,8 +59,10 @@ export function Content() {
     });
   };
 
-  useEffect(handleIndexCoffeeShops, []);
-  useEffect(handleUserShow, []);
+  if (localStorage.jwt !== undefined) {
+    useEffect(handleIndexCoffeeShops, []);
+    useEffect(handleUserShow, []);
+  }
 
   return (
     <div>
