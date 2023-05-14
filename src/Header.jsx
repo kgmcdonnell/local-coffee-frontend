@@ -28,6 +28,11 @@ export function Header() {
                   Find a coffee shop
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link header-nav" to="/account" style={{ color: "white" }}>
+                  Account
+                </Link>
+              </li>
               {localStorage.jwt === undefined ? (
                 <></>
               ) : (

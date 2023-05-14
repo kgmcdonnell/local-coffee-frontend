@@ -1,120 +1,71 @@
-// Libraries
-import axios from "axios";
-import { useState } from "react";
 // CSS
-import "./Signup.scoped.scss";
+import "./Account.scoped.scss";
 
-export function Signup() {
-  const [errors, setErrors] = useState([]);
+export function Account(props) {
   const handleSubmit = event => {
     event.preventDefault();
-    setErrors([]);
     const params = new FormData(event.target);
-    axios
-      .post("/users.json", params)
-      .then(function(response) {
-        event.target.reset();
-        window.location.href = "/";
-      })
-      .catch(function(error) {
-        console.log(error.response.data.errors);
-        setErrors(error.response.data.errors);
-      });
+    props.onUpdateUser(params, props.userData.id);
   };
-
   return (
-    <div className="signup">
-      <h3 className="text-center">Signup</h3>
-      <ul>
-        {errors.map(error => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
+    <div className="account-show">
+      <h3 style={{ marginBottom: "20px" }}>{props.userData.name}</h3>
       <form onSubmit={handleSubmit}>
-        <div className="form-group row">
-          <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">
+        <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
             Name
           </label>
-          <div className="col-sm-8">
+          <div className="col-sm-9">
             <input
               type="text"
               className="form-control form-control-sm"
               id="colFormLabelSm"
-              placeholder="First Name Last Name"
+              defaultValue={props.userData.name}
               name="name"
             />
           </div>
         </div>
-        <div className="form-group row">
-          <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">
+        <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
             Email
           </label>
-          <div className="col-sm-8">
+          <div className="col-sm-9">
             <input
               type="email"
               className="form-control form-control-sm"
               id="colFormLabelSm"
-              placeholder="Email"
+              defaultValue={props.userData.email}
               name="email"
             />
           </div>
         </div>
-        <div className="form-group row">
-          <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">
-            Password
-          </label>
-          <div className="col-sm-8">
-            <input
-              type="password"
-              className="form-control form-control-sm"
-              id="colFormLabelSm"
-              placeholder="Password"
-              name="password"
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">
-            Password
-          </label>
-          <div className="col-sm-8">
-            <input
-              type="password"
-              className="form-control form-control-sm"
-              id="colFormLabelSm"
-              placeholder="Password Confirmation"
-              name="password_confirmation"
-            />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">
+        <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
             City
           </label>
-          <div className="col-sm-8">
+          <div className="col-sm-9">
             <input
               type="text"
               className="form-control form-control-sm"
               id="colFormLabelSm"
-              placeholder="City"
+              defaultValue={props.userData.city}
               name="city"
             />
           </div>
         </div>
-        <div className="form-group row">
-          <label htmlFor="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm">
+        <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
             State
           </label>
-          <div className="col-sm-8">
+          <div className="col-sm-9">
             <input
               list="states"
               type="text"
               className="form-control form-control-sm"
               id="colFormLabelSm"
-              placeholder="State"
+              defaultValue={props.userData.state}
               name="state"
             />
-
             <datalist id="states">
               <option>Alabama</option>
               <option>Alaska</option>
@@ -167,9 +118,25 @@ export function Signup() {
             </datalist>
           </div>
         </div>
-        <div className="text-center">
-          <button className="signup-submit" type="submit" value="Login">
-            Signup
+        <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
+            Password
+          </label>
+          <div className="col-sm-9">
+            <input
+              type="password"
+              className="form-control form-control-sm"
+              id="colFormLabelSm"
+              defaultValue={props.userData.password}
+              name="password"
+              placeholder="New Password"
+            />
+          </div>
+        </div>
+
+        <div className="form-group text-center">
+          <button className="btn btn-secondary btn-sm" type="submit">
+            Save
           </button>
         </div>
       </form>

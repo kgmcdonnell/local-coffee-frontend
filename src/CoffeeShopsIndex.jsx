@@ -10,7 +10,6 @@ import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import "./CoffeeShopsIndex.scoped.scss";
 
 export function CoffeeShopsIndex(props) {
-  console.log(props);
   const [coffeeShopInfoWindow, setCoffeeShopInfoWindow] = useState(null);
   const handleSubmit = event => {
     event.preventDefault();

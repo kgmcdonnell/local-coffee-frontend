@@ -8,6 +8,7 @@ import { Modal } from "./Modal";
 import { Login } from "./Login";
 import { Signup } from "./Signup";
 import { CoffeeShopShow } from "./CoffeeShopShow";
+import { Account } from "./Account";
 
 export function Content() {
   const [coffeeShops, setCoffeeShops] = useState({});
@@ -51,6 +52,13 @@ export function Content() {
     });
   };
 
+  // User Update
+  const handleUpdateUser = (params, id) => {
+    axios.patch(`/users/${id}.json`, params).then(response => {
+      setCurrentUserShow(response.data);
+    });
+  };
+
   useEffect(handleIndexCoffeeShops, []);
   useEffect(handleUserShow, []);
 
@@ -87,6 +95,7 @@ export function Content() {
             />
           }
         />
+        <Route path="/account" element={<Account userData={currentUserShow} onUpdateUser={handleUpdateUser} />} />
       </Routes>
 
       <Modal show={isSignupVisible} onClose={handleClose}>
