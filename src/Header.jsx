@@ -33,13 +33,9 @@ export function Header() {
                   Account
                 </Link>
               </li>
-              {localStorage.jwt === undefined ? (
-                <></>
-              ) : (
-                <>
-                  <LogoutLink className="nav-link nav-item" />
-                </>
-              )}
+              <li>
+                <LogoutLink className="nav-link nav-item" />
+              </li>
             </ul>
           </div>
         </div>

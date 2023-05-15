@@ -4,15 +4,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(white,gray);
+  background-image: url("./assets/shutterstock_1141005377.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 input {
   border-radius: 5px;
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  // background-image: url("./assets/Screen\ Shot\ 2023-05-14\ at\ 5.05.00\ PM.png");
+  // background-repeat: no-repeat;
+  // background-size: 100%;
+  height: 500px;
+  width: 350px;
+}
 
-button {
-  width: 60%;
-  margin: 10px;
+form {
+  color: white;
+}
+
+form input {
+  background-color: gray;
+  border: none;
 }
 
