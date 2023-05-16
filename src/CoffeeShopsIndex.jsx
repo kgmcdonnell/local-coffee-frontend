@@ -24,12 +24,24 @@ export function CoffeeShopsIndex(props) {
     width: "100%",
   };
 
+  // Select random quote from quotes array
+  var randomQuote = props.quotes[Math.floor(Math.random() * props.quotes.length)];
+
   return (
     <div className="coffee-shops-index">
       <div className="row">
         <div className="col-sm-5">
           <form onSubmit={handleSubmit}>
             <div className="row">
+              <div style={{ marginBottom: "10px" }}>
+                {props.quotes && props.quotes.length > 0 ? (
+                  <p>
+                    <q>{randomQuote.text}</q> - {randomQuote.author}
+                  </p>
+                ) : (
+                  <></>
+                )}
+              </div>
               <div className="col-sm-5" style={{ padding: "5px" }}>
                 <input className="form-control form-input" type="text" name="city" placeholder="City" />
               </div>

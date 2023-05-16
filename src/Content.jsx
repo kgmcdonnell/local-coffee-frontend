@@ -16,6 +16,7 @@ export function Content() {
   const [isSignupVisible, setIsSignupVisible] = useState(false);
   const [isCofeeShopVisible, setIsCoffeeShopVisible] = useState(false);
   const [currentUserShow, setCurrentUserShow] = useState({});
+  const [quotes, setQuotes] = useState([]);
 
   // Coffee Shops Index
   const handleIndexCoffeeShops = () => {
@@ -60,9 +61,17 @@ export function Content() {
     });
   };
 
+  // Quotes Index
+  const handleQuotes = () => {
+    axios.get("/quotes.json").then(function(response) {
+      setQuotes(response.data);
+    });
+  };
+
   if (localStorage.jwt !== undefined) {
     useEffect(handleIndexCoffeeShops, []);
     useEffect(handleUserShow, []);
+    useEffect(handleQuotes, []);
   }
 
   return (
@@ -82,6 +91,7 @@ export function Content() {
                   onShowCoffeeShop={handleCoffeeShopShow}
                   onUpdateLocation={handleUpdateLocation}
                   userData={currentUserShow}
+                  quotes={quotes}
                 />
               }
             />
@@ -95,6 +105,7 @@ export function Content() {
               onUpdateLocation={handleUpdateLocation}
               onShowCoffeeShop={handleCoffeeShopShow}
               userData={currentUserShow}
+              quotes={quotes}
             />
           }
         />
