@@ -121,7 +121,7 @@ export function CoffeeShopsIndex(props) {
                           <FontAwesomeIcon
                             className="fa-circle-info"
                             icon={faCircleInfo}
-                            style={{ color: "rgba(83,81,81)" }}
+                            style={{ color: "rgba(83,81,81)", marginRight: "10px" }}
                           />
                         </button>
                       </p>

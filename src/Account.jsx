@@ -12,8 +12,8 @@ export function Account(props) {
     <div className="account-show">
       <div className="wrapper">
         <form onSubmit={handleSubmit}>
-          <h3 style={{ marginBottom: "20px" }}>{props.userData.name}</h3>
-          <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <h3 style={{ marginBottom: "40px" }}>{props.userData.name}</h3>
+          <div className="form-group row" style={{ marginBottom: "30px" }}>
             <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
               Name
             </label>
@@ -27,7 +27,7 @@ export function Account(props) {
               />
             </div>
           </div>
-          <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <div className="form-group row" style={{ marginBottom: "30px" }}>
             <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
               Email
             </label>
@@ -41,7 +41,7 @@ export function Account(props) {
               />
             </div>
           </div>
-          <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <div className="form-group row" style={{ marginBottom: "30px" }}>
             <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
               City
             </label>
@@ -55,7 +55,7 @@ export function Account(props) {
               />
             </div>
           </div>
-          <div className="form-group row" style={{ marginBottom: "20px" }}>
+          <div className="form-group row" style={{ marginBottom: "40px" }}>
             <label htmlFor="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm">
               State
             </label>
@@ -121,7 +121,7 @@ export function Account(props) {
             </div>
           </div>
           <div className="form-group text-center">
-            <button className="btn btn-secondary btn-sm" type="submit">
+            <button className="btn btn-secondary btn-sm" type="submit" style={{ width: "50%" }}>
               Save
             </button>
           </div>
