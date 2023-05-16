@@ -1,3 +1,4 @@
+// Background Styling
 .account-show {
   height: 100vh;
   background-color: black;
@@ -7,22 +8,17 @@
   background-repeat: no-repeat;
 }
 
-
-
 // Form styling
 input {
   border-radius: 5px;
 }
 .wrapper {
-  // background-color: yellow;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-left: 40%;
   padding-top: 15%;
-  // height: 500px;
-  // width: 350px;
 }
 
 form {
