@@ -38,6 +38,9 @@ export function Login(props) {
         <form onSubmit={handleSubmit} className="form text-center">
           <h1>Roast'd</h1>
           <p>Connect with local coffee shops around you!</p>
+          <p style={{ marginBottom: "0px" }}>Guest Login:</p>
+          <p style={{ marginBottom: "0px" }}>Username: guest@test.com</p>
+          <p style={{ marginBottom: "0px" }}>Password: password123!</p>
 
           {errors.map(error => (
             <p key={error}>{error}</p>
