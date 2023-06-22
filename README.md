@@ -3,7 +3,7 @@ ROAST'd allows users to explore new coffee shops within a six-mile radius of the
 <p align="center">
 <img src="https://github.com/kgmcdonnell/local-coffee-api/blob/main/app/assets/images/ROAST'D.png?raw=true" alt="roast'd screenshot" width="600px" height="auto">
 </p>
-Check out ROAST'D: https://local-coffee-frontend.onrender.com
+Check out ROAST'D: https://roastd-coffee.onrender.com
 
 ## Getting Started
 ```
