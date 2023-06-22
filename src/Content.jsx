@@ -97,7 +97,7 @@ export function Content() {
             />
           </>
         )}
-        <Route
+        {/* <Route
           path="/coffee-shops"
           element={
             <CoffeeShopsIndex
@@ -108,7 +108,7 @@ export function Content() {
               quotes={quotes}
             />
           }
-        />
+        /> */}
         <Route path="/account" element={<Account userData={currentUserShow} onUpdateUser={handleUpdateUser} />} />
       </Routes>
 
